@@ -3,7 +3,7 @@
 // let count = 0;
 
 const url = "https://restcountries.com/v3.1/all";
-let display = {};
+let display = new Object();
 // const url1 = `https://api.agify.io?name=${Name}&country_id=${country}`;
 
 let div1 = document.createElement("div");
@@ -12,8 +12,15 @@ div1.className = "search-container";
 let input1 = document.createElement("input");
 input1.type = "text";
 input1.value = "Enter the person name";
+input1.id = "i1";
 
 div1.appendChild(input1);
+
+let br1 = document.createElement("br");
+div1.appendChild(br1);
+
+let br2 = document.createElement("br");
+div1.appendChild(br2);
 
 let input2 = document.createElement("input");
 input2.setAttribute("list", "countries");
@@ -25,6 +32,9 @@ dataList.id = "countries";
 input2.appendChild(dataList);
 
 div1.appendChild(input2);
+
+let br3 = document.createElement("br");
+div1.appendChild(br3);
 
 let search = document.createElement("button");
 search.innerHTML = "Find";
@@ -74,9 +84,31 @@ search.addEventListener("click", function () {
               if (data.age === null) {
                 alert("Enter the name properly");
               } else {
+                let div2 = document.createElement("div");
+                div2.className = "response";
+
+                let h31 = document.createElement("h3");
+                h31.innerHTML = `Name:${data.name}`;
+                div2.appendChild(h31);
+
+                let h32 = document.createElement("h3");
+                h32.innerHTML = `Country:${data.country_id}`;
+                div2.appendChild(h32);
+
+                let h33 = document.createElement("h3");
+                h33.innerHTML = `Age:${data.age}`;
+                div2.appendChild(h33);
+
+                let h34 = document.createElement("h3");
+                h34.innerHTML = `Total Age Records Examined: ${data.count}`;
+                div2.appendChild(h34);
+
+                document.body.appendChild(div2);
+
                 display.Name = data.name;
                 display.countryid = data.country_id;
-                display.Age = data.age;
+                display.age = data.age;
+                display.age_records_examined = data.count;
 
                 let genderurl = `https://api.genderize.io?name=${Name}&country_id=${country}`;
                 fetch(genderurl)
@@ -86,9 +118,21 @@ search.addEventListener("click", function () {
                       alert("Enter the proper name");
                       location.reload();
                     } else {
+                      let h35 = document.createElement("h3");
+                      h35.innerHTML = `Gender: ${data.gender}`;
+                      div2.appendChild(h35);
+
+                      let h36 = document.createElement("h3");
+                      h36.innerHTML = `Gender Probability: ${data.probability}`;
+                      div2.appendChild(h36);
+
+                      let h37 = document.createElement("h3");
+                      h37.innerHTML = `Total Gender Records Examined: ${data.count} `;
+                      div2.appendChild(h37);
+
                       display.gender = data.gender;
                       display.gender_probability = data.probability;
-                      display.records_examined = data.count;
+                      display.gender_records_examined = data.count;
                     }
                   })
                   .catch((err) => {
@@ -116,9 +160,31 @@ search.addEventListener("click", function () {
           alert("Enter the Person Name and Country  properly");
           location.reload();
         } else {
+          let div2 = document.createElement("div");
+          div2.className = "response";
+
+          let h31 = document.createElement("h3");
+          h31.innerHTML = `Name:${data.name}`;
+          div2.appendChild(h31);
+
+          let h32 = document.createElement("h3");
+          h32.innerHTML = `Country:${data.country_id}`;
+          div2.appendChild(h32);
+
+          let h33 = document.createElement("h3");
+          h33.innerHTML = `Age:${data.age}`;
+          div2.appendChild(h33);
+
+          let h34 = document.createElement("h3");
+          h34.innerHTML = `Total Age Records Examined: ${data.count}`;
+          div2.appendChild(h34);
+
+          document.body.appendChild(div2);
+
           display.Name = data.name;
           display.countryid = data.country_id;
           display.age = data.age;
+          display.age_records_examined = data.count;
 
           let genderurl = `https://api.genderize.io?name=${Name}&country_id=${country}`;
           fetch(genderurl)
@@ -128,9 +194,21 @@ search.addEventListener("click", function () {
                 alert("Enter the proper name");
                 location.reload();
               } else {
+                let h35 = document.createElement("h3");
+                h35.innerHTML = `Gender: ${data.gender}`;
+                div2.appendChild(h35);
+
+                let h36 = document.createElement("h3");
+                h36.innerHTML = `Gender Probability: ${data.probability}`;
+                div2.appendChild(h36);
+
+                let h37 = document.createElement("h3");
+                h37.innerHTML = `Total Gender Records Examined: ${data.count} `;
+                div2.appendChild(h37);
+
                 display.gender = data.gender;
                 display.gender_probability = data.probability;
-                display.records_examined = data.count;
+                display.gender_records_examined = data.count;
               }
             })
             .catch((err) => {
@@ -142,5 +220,18 @@ search.addEventListener("click", function () {
         console.log(err);
       });
   }
+
+  //Displaying info on screen
   console.log(display);
+  //   console.log(display[country_id]);
+
+  //   console.log(display.age_records_examined);
+  //   console.log(display.gender);
+  //   console.log(display.gender_probability);
+  //   console.log(display.gender_records_examined);
+
+  //   h31.innerHTML = display.Name;
+  //   h32.innerHTML = display.countryid;
+  //   h33.innerHTML = display.Age;
+  //   h34.innerHTML = display.age_records_examined;
 });

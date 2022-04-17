@@ -1,3 +1,40 @@
 .search-container{
-    margin:50px 50px 50px 50px;
+background-color: rgb(106, 106, 226);
+border: 2px solid blue;
+border-radius:20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top:15%;
+padding-top: 2%;
+padding-bottom: 2%;
+margin-left: 20%;
+margin-right: 20%;
+
+/* margin-left: 10%; */
+    
+}
+.response{
+text-align: center;
+border:2px solid rgb(235, 30, 74);
+margin-top: 1%;
+margin-left: 5%;
+margin-right: 5%;
+display:flex;
+flex-direction: column;
+    align-items: baseline;
+}
+
+
+#i1{
+  
+}
+#countries{
+    text-align: center;
+}
+body{
+    background-color: aquamarine;
+}
+h3{
+    background-color: rgb(188, 215, 219);
 }

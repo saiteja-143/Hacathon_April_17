@@ -6,6 +6,26 @@ const url = "https://restcountries.com/v3.1/all";
 let display = new Object();
 // const url1 = `https://api.agify.io?name=${Name}&country_id=${country}`;
 
+let div0 = document.createElement("div");
+div0.className = "nav-bar";
+
+let btn0 = document.createElement("button");
+btn0.id = "contact";
+btn0.innerHTML = "Contact Us";
+div0.appendChild(btn0);
+btn0.addEventListener("click", function exe() {
+  window.location.href = "https://contact-our-team.netlify.app";
+});
+
+let btn1 = document.createElement("button");
+btn1.id = "About";
+btn1.innerHTML = "About ";
+div0.appendChild(btn1);
+btn1.addEventListener("click", function exe() {
+  window.location.href = "https://info-about.netlify.app";
+});
+
+document.body.appendChild(div0);
 let div1 = document.createElement("div");
 div1.className = "search-container";
 
@@ -220,18 +240,4 @@ search.addEventListener("click", function () {
         console.log(err);
       });
   }
-
-  //Displaying info on screen
-  console.log(display);
-  //   console.log(display[country_id]);
-
-  //   console.log(display.age_records_examined);
-  //   console.log(display.gender);
-  //   console.log(display.gender_probability);
-  //   console.log(display.gender_records_examined);
-
-  //   h31.innerHTML = display.Name;
-  //   h32.innerHTML = display.countryid;
-  //   h33.innerHTML = display.Age;
-  //   h34.innerHTML = display.age_records_examined;
 });

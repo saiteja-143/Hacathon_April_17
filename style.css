@@ -1,5 +1,5 @@
 .search-container{
-background-color: rgb(106, 106, 226);
+background-color: rgb(252, 252, 255);
 border: 2px solid blue;
 border-radius:20px;
 display: flex;
@@ -16,13 +16,14 @@ margin-right: 20%;
 }
 .response{
 text-align: center;
-border:2px solid rgb(235, 30, 74);
+border:2px solid #000009;
 margin-top: 1%;
-margin-left: 5%;
+margin-left:5%;
 margin-right: 5%;
 display:flex;
 flex-direction: column;
     align-items: baseline;
+    
 }
 
 
@@ -33,8 +34,30 @@ flex-direction: column;
     text-align: center;
 }
 body{
-    background-color: aquamarine;
+    background-color: #00011C;
+    color: aliceblue;
 }
 h3{
-    background-color: rgb(188, 215, 219);
+    /* background-color: rgb(255, 255, 255); */
+    color: beige;
+}
+#About{
+/* margin-left: 95%;   */
+padding: 10px 10px 10px 10px;
+border-radius: 12px;  
+float: right;
+}
+#contact{
+    /* margin-left:89%; */
+    padding: 10px 10px 10px 10px;
+border-radius: 12px; 
+float: right;
+
+ 
+
+}
+.nav-bar{
+    background-color: #000009;
+    padding: 2% 2% 2% 2%;
+    
 }
